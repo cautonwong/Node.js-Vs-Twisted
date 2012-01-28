@@ -43,7 +43,7 @@ redirect_stderr=true
 
 [program:docs]
 command = ${buildout:bin-directory}/bin/python -m SimpleHTTPServer ${ports:public}
-directory = ${buildout:bin-directory}/www
+directory = ${buildout:bin-directory}/www/html
 redirect_stderr=true
 
 [group:site]
