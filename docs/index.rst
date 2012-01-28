@@ -2,3 +2,4 @@
    overview
    requirements
    userstories
+   ../README
