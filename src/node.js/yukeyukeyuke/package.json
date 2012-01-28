@@ -1,0 +1,9 @@
+{
+    "name":"yukeyukeyuke",
+    "version":"0.0.1a",
+    "analyze": false,
+    "preferGlobal": "true",
+    "bin": {
+      "yukeyukeyuke": "server.js"
+    }
+}

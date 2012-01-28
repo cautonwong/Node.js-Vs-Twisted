@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+yukeyukeyuke/__init__.py
+yukeyukeyuke.egg-info/PKG-INFO
+yukeyukeyuke.egg-info/SOURCES.txt
+yukeyukeyuke.egg-info/dependency_links.txt
+yukeyukeyuke.egg-info/entry_points.txt
+yukeyukeyuke.egg-info/not-zip-safe
+yukeyukeyuke.egg-info/requires.txt
+yukeyukeyuke.egg-info/top_level.txt
