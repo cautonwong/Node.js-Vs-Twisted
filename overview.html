@@ -1,0 +1,216 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>YukeYukeYuke: A Real-Time SCRUM Collaboration Tool &mdash; YukeYukeYuke 0.0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="#" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/toggle_sections.js"></script>
+    <link rel="top" title="YukeYukeYuke 0.0.1a documentation" href="index.html" />
+    <link rel="next" title="YukeYukeYuke: Requirements" href="requirements.html" />
+    <link rel="prev" title="YukeYukeYuke: SCRUM Tools" href="index.html" /> 
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="YukeYukeYuke: Requirements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="YukeYukeYuke: SCRUM Tools"
+             accesskey="P">previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="yukeyukeyuke-a-real-time-scrum-collaboration-tool">
+<h1>YukeYukeYuke: A Real-Time SCRUM Collaboration Tool<a class="headerlink" href="#yukeyukeyuke-a-real-time-scrum-collaboration-tool" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-oh-by-the-way admonition">
+<p class="first admonition-title">OH, By the Way...</p>
+<p class="last">This project also aims to pit two frameworks against each other in mortal kombat: <a class="reference external" href="http://nodejs.org">Node.js</a> and <a class="reference external" href="http://twistedmatrix.com/trac/">Twisted</a>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Josh Johnson &lt;<a class="reference external" href="mailto:lionface&#46;lemonface&#37;&#52;&#48;gmail&#46;com">lionface<span>&#46;</span>lemonface<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This project aims to create real-time collaboration-based apps to help facilitate the SCRUM process. The main aim is to implement the front-end entirely in HTML+CSS+JQuery, and implement the back-end <em>twice</em>, once in Node.js, once in Twisted.</p>
+<p>The idea is to create a realistic set of requirements in wich to explore these two tools, and compare them <em>apples-to-apples</em>.</p>
+</div>
+<div class="section" id="motivations">
+<h2>Motivations<a class="headerlink" href="#motivations" title="Permalink to this headline">¶</a></h2>
+<p>This project has a few primary objectives:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Give the core developer an excuse to explore technologies they haven&#8217;t used yet.</li>
+<li>Take a critical look at what event-based, lower-level web development can be.</li>
+<li>Draw some attention to Twisted.</li>
+<li>Make some of the mundane meetings/tasks that are keystones of the SCRUM methodology more <em>agile</em>.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="node-js-vs-twisted">
+<h2>Node.js Vs. Twisted<a class="headerlink" href="#node-js-vs-twisted" title="Permalink to this headline">¶</a></h2>
+<p>I decided to try a parallel approach to evaulating the two tools when a pythonista friend of mine lamented on Twitter about how Node.js gets so much more attention than Twisted.</p>
+<p>I had heard of both tools, but not until he made that post did it dawn on me that the two tools serve very, very simuilar purposes. It&#8217;s all about event-driven client/server communications.</p>
+<p>The primary difference between them seems to boil down to language (python vs javascript) and maturity (node is realitvely new compared to twisted).</p>
+<p>I&#8217;m a pythonista from &#8216;way-back&#8217;, and I&#8217;m also very competent with javascript. One of the hardest parts of evaulating platforms can be learning the language they&#8217;re implemented in; I&#8217;ve got that covered.</p>
+<p>So I feel like I&#8217;m in a very good place to compare the two tools in as comprehensive a way as I can. I can also stretch some of my client-side muscles to completely decouple the back and front-ends.</p>
+<p>In the end, I should have a really solid example of a difficult (but not too difficult) poblem solved to the same spec in both platforms. From there, I can do benchmarks, get feedback from the developer communities about optimizations, and form some sort of opnion about both tools.</p>
+<p>And of course, by publishing this code and writing about it on my blog ( <a class="reference external" href="http://lionfacelemonface.wordpress.com">http://lionfacelemonface.wordpress.com</a> ), I hope to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Draw attention to Twisted from folks looking for Node.js</li>
+<li>Give others who may be looking for node.js/twisted examples a leg up</li>
+<li>Provide some souce material for folks pleading a case for adoption of either (or both) tools.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="development-theme">
+<h2>Development Theme<a class="headerlink" href="#development-theme" title="Permalink to this headline">¶</a></h2>
+<p>I&#8217;ve used a couple of variants of the SCRUM development methodology for several years. I believe it&#8217;s made me a better developer; the quality of my work has gone up exponentially since I adopted it.</p>
+<p>But at its heart, there is a lot of information to track and process (and re-process), and there are a large number of mandatory meetings.</p>
+<p>Further, a lot of the meetings are often difficult to do remotely.</p>
+<p>The data and meeting managment requirements of SCRUM can be daunting; it&#8217;s easy to loose sight of the core tennants of the methodology. That hurts productivity and can derail initial adoption entirely.</p>
+<p>To that end, the general goal of this project is to provide solutions to help smooth out the rough edges of the methodology.</p>
+<p>Since a lot of the meetings involve team members stating opnion in private, then revealing for the group (planning poker, sprint retrospective), it makes sense to use a real-time, event-driven service archetecture.</p>
+</div>
+<div class="section" id="research-and-development">
+<h2>Research and Development<a class="headerlink" href="#research-and-development" title="Permalink to this headline">¶</a></h2>
+<p>Research for this project has been sparse so far:</p>
+<blockquote>
+<div><ul class="simple">
+<li>I&#8217;m intentionally going into this project with a limited knowledge of the tools being evaluated.</li>
+<li>I&#8217;ve opted to ignore existing tools in the same problem space.</li>
+</ul>
+</div></blockquote>
+<p>On a typical project I would not proceed with development in either case.</p>
+<p>For this project, however, both situations are absolutely necessary.</p>
+<p>There&#8217;s merrit in taking a completely fresh look at a problem, and I think over all it will produce a more fair comparison of the tools when all is said and done.</p>
+</div>
+<div class="section" id="development-guidelines">
+<h2>Development Guidelines<a class="headerlink" href="#development-guidelines" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>There will be a very strict division between the client and server components.</li>
+<li>Unit tests and inline documentation are manditory.</li>
+<li>The specs will be <strong>strictly</strong> implementation in-specific.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">YukeYukeYuke: A Real-Time SCRUM Collaboration Tool</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#motivations">Motivations</a></li>
+<li><a class="reference internal" href="#node-js-vs-twisted">Node.js Vs. Twisted</a></li>
+<li><a class="reference internal" href="#development-theme">Development Theme</a></li>
+<li><a class="reference internal" href="#research-and-development">Research and Development</a></li>
+<li><a class="reference internal" href="#development-guidelines">Development Guidelines</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">YukeYukeYuke: SCRUM Tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="requirements.html"
+                        title="next chapter">YukeYukeYuke: Requirements</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/overview.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="YukeYukeYuke: Requirements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="YukeYukeYuke: SCRUM Tools"
+             >previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, Josh Johnson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>

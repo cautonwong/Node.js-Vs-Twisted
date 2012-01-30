@@ -1,0 +1,292 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>YukeYukeYuke: User Stories &mdash; YukeYukeYuke 0.0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="#" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/toggle_sections.js"></script>
+    <link rel="top" title="YukeYukeYuke 0.0.1a documentation" href="index.html" />
+    <link rel="prev" title="YukeYukeYuke: Requirements" href="requirements.html" /> 
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="YukeYukeYuke: Requirements"
+             accesskey="P">previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="yukeyukeyuke-user-stories">
+<h1>YukeYukeYuke: User Stories<a class="headerlink" href="#yukeyukeyuke-user-stories" title="Permalink to this headline">¶</a></h1>
+<p>This section deals with identifying the core pieces of functionality, which will drive further design decisions moving forward.</p>
+<div class="section" id="user-management">
+<h2>User Management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h2>
+<p>There needs to be a way to manage users who have access to the system. They need to be grouped into projects. Users will be given certain roles on each project, such as &#8216;Team Member&#8217;, &#8216;Product Owner&#8217; and &#8216;Scrum Master&#8217;, which will drive their access level and how the user interfaces are presented.</p>
+<p>Profile data should be flexible and extensible by someone setting up the system.</p>
+<p>At minimum users should provide a user name, a password and an e-mail.</p>
+</div>
+<div class="section" id="user-authentication">
+<h2>User Authentication<a class="headerlink" href="#user-authentication" title="Permalink to this headline">¶</a></h2>
+<p>People will need to identify themselves when using the system. External authentication should be supported.</p>
+<p>Specific authentication providers that should be supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://openid.net/">openid</a>.</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Kerberos_%28protocol%29">Kerberos</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Ldap">LDAP</a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="implementation-details">
+<h3>Implementation Details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h3>
+<p>I don&#8217;t want to have to build user management interfaces at this stage, so the plan during the initial development phase is to use a self-organizing approach.</p>
+<p>The user who initially establishes a meeting will have &#8216;admin&#8217; rights for the meeting, and subsequent users will be considered &#8216;team members&#8217;.</p>
+<p>So initially, &#8216;logging in&#8217; is just a matter of entering your basic information.</p>
+<p>But beyond that, the application will respect a couple of special headers:</p>
+<blockquote>
+<div><ul class="simple">
+<li>X_HTTP_USER - contains the user name if other authentication is used</li>
+<li>X_YUKE_ROLE - contains a role string that will be used, assumed to be provided by the authentication that happened prior.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>These are not set in stone; the format of the headers and what can be marshaled between an external authentication mechanism and the application will solidify as the other parts of the app are finalized.</p>
+<p class="last">That said, I think this may be the best approach moving forward; it&#8217;s relatively easy to put some sort of web proxy out front of an app like this, and then the person deploying the app is free to use whatever authentication mechanism that meets their requirements.</p>
+</div>
+</div>
+</div>
+<div class="section" id="user-authorization">
+<h2>User Authorization<a class="headerlink" href="#user-authorization" title="Permalink to this headline">¶</a></h2>
+<p>Administrators of the system should be able to restrict what privileges a user has relative to specific actions or data.</p>
+<dl class="docutils">
+<dt>Concerns:</dt>
+<dd><ul class="first last simple">
+<li>How fine-grained should the access control be?</li>
+<li>Where should this control be managed? Centrally? User-relative? Content-relative?</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h3>Implementation Details<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>I like how permissions are handled within the <a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/1.3-branch/index.html">Pyramid</a> framework (specifcally, <a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/1.3-branch/narr/security.html">http://docs.pylonsproject.org/projects/pyramid/en/1.3-branch/narr/security.html</a>).</p>
+<p>This follows the Zope philosophy of &#8216;object protect thyself&#8217;.</p>
+<p>It uses an arbitrary set of strings that represent permissions. Some are obvious (&#8216;Read&#8217;, &#8216;Edit&#8217;), but the permissions don&#8217;t always map to concepts like file system permissions do. Some examples: &#8216;Can Execute Remote Code&#8217;, &#8216;Is Allowed To Use The Stove&#8217;.</p>
+<p>The roles are applied to users and/or groups by a given content object (pyramid uses a &#8216;magic&#8217; property called __acl__).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">...</span>
+<span class="n">__acl__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">Allow</span><span class="p">,</span> <span class="n">Everyone</span><span class="p">,</span> <span class="s">&#39;view&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Allow</span><span class="p">,</span> <span class="s">&#39;group:editors&#39;</span><span class="p">,</span> <span class="s">&#39;add&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Allow</span><span class="p">,</span> <span class="s">&#39;group:editors&#39;</span><span class="p">,</span> <span class="s">&#39;edit&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Pyramid is also aware of inherited permissions if the object is set up as the child of another object. The framework will walk up the lineage of an object and reconcile the permissions before deciding if the user is authorized or not.</p>
+<p>How this is implemented really depends on how well the &#8216;self-organizing&#8217; approach to authentication works out, and how much fine-grained control of access is really appropriate.</p>
+</div>
+</div>
+<div class="section" id="user-story-management">
+<h2>User Story Management<a class="headerlink" href="#user-story-management" title="Permalink to this headline">¶</a></h2>
+<p>The system should allow the user to create/modify/delete user stories. User stories capture the following data at minimum:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Title:</th><td class="field-body">the short-name of the story.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Body:</th><td class="field-body">The content of the story, rich text.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Who initially wrote it.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Contributors:</th><td class="field-body">Any additional collaborators/editors/other people to credit.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Estimate:</th><td class="field-body">The current estimate, in story points</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Priority:</th><td class="field-body">A relative numeric value used for sorting stories by priority.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body">What is the status of the story? Typical values would be &#8216;Not Started&#8217;, &#8216;In Progress&#8217;, &#8216;Blocked&#8217;, and &#8216;Complete&#8217;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Sprint:</th><td class="field-body">which sprint(s) this User Story is included in.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Release:</th><td class="field-body">which version of the software is associated with this story.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>User stories should also allow for the following amendments to be uploaded or attached to the story:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Implementation Details:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The current implementation plan (technical details go here).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">IT Resources:</th><td class="field-body">Any IT needs anticipated.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Test Plan:</th><td class="field-body">How does the developer prove that this story is complete?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Uncertainties:</th><td class="field-body">Lists of outstanding questions.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The amendments can contain rich text and images (we will often add links, mockups and other media).</p>
+<p>It would be great if the fields and amendments could be defined at runtime by the user.</p>
+<p>All fields short of Title and Body should be optional.</p>
+</div>
+<div class="section" id="sprint-management">
+<h2>Sprint Management<a class="headerlink" href="#sprint-management" title="Permalink to this headline">¶</a></h2>
+<p>Users should be able to create/modify/delete sprints. Sprints have a title, start/end dates, a description, a release, and a list of associated user stories.</p>
+</div>
+<div class="section" id="sprint-retrospective-meeting">
+<h2>Sprint Retrospective Meeting<a class="headerlink" href="#sprint-retrospective-meeting" title="Permalink to this headline">¶</a></h2>
+<p>A Scrum Master should be able to establish a sprint retrospective meeting, invite attendees, and hold the meeting on-line.</p>
+<p>The basic flow of the meeting goes like this:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Each team member is asked for the following information, in regards to the sprint:</p>
+<blockquote>
+<div><ul class="simple">
+<li>What was good about the sprint</li>
+<li>What was bad about the sprint</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The information is kept secret until all team members are finished.</p>
+</li>
+<li><p class="first">Everyone&#8217;s answers are revealed one after the other, in random order.</p>
+</li>
+<li><p class="first">The group discusses the values.</p>
+</li>
+<li><p class="first">Each team member is asked &#8216;What can we try to improve?&#8217;. Those responses are also collected in secret.</p>
+</li>
+<li><p class="first">The group discusses these ideas and then selects some to commit to.</p>
+</li>
+</ol>
+</div></blockquote>
+<div class="section" id="id2">
+<h3>Implementation Details<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>This will be the first scrum tool that is built in this dual-platform project.</p>
+<p>The user interface will be 100% browser-based. It&#8217;s unclear at this point how the static javascript and html files will be served to the user.</p>
+<p>For data storage, we&#8217;ll use flat files containing JSON.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">YukeYukeYuke: User Stories</a><ul>
+<li><a class="reference internal" href="#user-management">User Management</a></li>
+<li><a class="reference internal" href="#user-authentication">User Authentication</a><ul>
+<li><a class="reference internal" href="#implementation-details">Implementation Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-authorization">User Authorization</a><ul>
+<li><a class="reference internal" href="#id1">Implementation Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-story-management">User Story Management</a></li>
+<li><a class="reference internal" href="#sprint-management">Sprint Management</a></li>
+<li><a class="reference internal" href="#sprint-retrospective-meeting">Sprint Retrospective Meeting</a><ul>
+<li><a class="reference internal" href="#id2">Implementation Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="requirements.html"
+                        title="previous chapter">YukeYukeYuke: Requirements</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/userstories.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="YukeYukeYuke: Requirements"
+             >previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, Josh Johnson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>

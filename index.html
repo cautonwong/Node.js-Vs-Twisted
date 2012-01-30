@@ -1,0 +1,269 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>YukeYukeYuke: SCRUM Tools &mdash; YukeYukeYuke 0.0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="#" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/toggle_sections.js"></script>
+    <link rel="top" title="YukeYukeYuke 0.0.1a documentation" href="#" />
+    <link rel="next" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool"
+             accesskey="N">next</a> |</li>
+    <li><a href="#">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="yukeyukeyuke-scrum-tools">
+<h1>YukeYukeYuke: SCRUM Tools<a class="headerlink" href="#yukeyukeyuke-scrum-tools" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">YukeYukeYuke: A Real-Time SCRUM Collaboration Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">YukeYukeYuke: Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userstories.html">YukeYukeYuke: User Stories</a></li>
+</ul>
+</div>
+<div class="section" id="readme">
+<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>This repository contains a <a class="reference external" href="http://pypi.python.org/pypi/zc.buildout/1.5.2">zc.buildout</a> sandbox environment to support a series of blog posts pitting <a class="reference external" href="http://nodejs.org">Node.js</a> against <a class="reference external" href="http://twistedmatrix.com/trac/">Twisted</a>.</p>
+<p>The goal is to get into event-driven application development by working through the same requirements. Two servers, one fully-decoupled UI.</p>
+<p>The blog posts are on-going, starting with <a class="reference external" href="http://wp.me/p8How-9n">http://wp.me/p8How-9n</a>. I&#8217;ll collect (and probably expand on) the posts at <a class="reference external" href="http://lionfacelemonface.wordpress.com/node-js-vs">http://lionfacelemonface.wordpress.com/node-js-vs</a>-twi…he-whole-story/ when the series is complete.</p>
+<p>I&#8217;m also going to break out the node, python, and front-end parts into separate packages, and distribute them via the standard channels.</p>
+<p>So think of this project as &#8216;soup to nuts&#8217; evaluation of Twisted, Node.js, and event-driven web development.</p>
+</div>
+<div class="section" id="about-the-app">
+<h3>About the App<a class="headerlink" href="#about-the-app" title="Permalink to this headline">¶</a></h3>
+<p>See the documentation for more information. It&#8217;s essentially a tool to help make SCRUM collaborations easier.</p>
+<p>The working title is &#8220;YukeYukeYuke&#8221;. It&#8217;s how my 3 year-old nephew called his dog Luke.</p>
+</div>
+<div class="section" id="directions-for-use">
+<h3>Directions For Use<a class="headerlink" href="#directions-for-use" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This project is for intra-cranial use only. <strong>Eye Irritant.</strong> <em>If product gets into eyes, flush with water.</em></p>
+</div>
+<p>If you&#8217;ve used zc.buildout before, you know this dance, but I want to go into details for folks that may be seeing a buildout for the first time.</p>
+<div class="section" id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h4>
+<p>To effectively use any buildout, you will need the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>python &lt;http://www.python.org&gt;</cite>, and its source - this project is built with version 2.6.6, should work with any version greater than 2.5 but less than 3.0.</li>
+<li>Common build tools (make, gcc, etc).</li>
+<li>git</li>
+</ul>
+</div></blockquote>
+<p>For this project, you will also need:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a unix-like operating system (built with Ubuntu 10.10)</li>
+</ul>
+</div></blockquote>
+<p>I might be able to support windows and OS X with a few modifications in how things are done, feel free to open an issue with problems.</p>
+<p>On a debian-based system, something like this will install all of the packages you need:</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ sudo apt-get install python python-dev build-essential</pre>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Keep an eye on this file, as the persistence story evolves there may be additional requirements.</p>
+</div>
+</div>
+<div class="section" id="running-the-build">
+<h4>Running The Build<a class="headerlink" href="#running-the-build" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Check out the source</p>
+<div class="highlight-python"><pre>$ cd ~
+$ git://github.com/jjmojojjmojo/Node.js-Vs-Twisted.git</pre>
+</div>
+</li>
+<li><p class="first">Bootstrap and buildout</p>
+<div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted
+$ python bootstrap.py
+$ bin/buildout</pre>
+</div>
+</li>
+</ol>
+<p>That&#8217;s all there is to it.</p>
+</div>
+<div class="section" id="running-the-apps">
+<h4>Running the Apps<a class="headerlink" href="#running-the-apps" title="Permalink to this headline">¶</a></h4>
+<p>The buildout sets up node.js, Twisted, and serves html documentation generated with <a class="reference external" href="http://sphinx.pocoo.org/">sphinx</a>.</p>
+<p>All three processes are controlled by <a class="reference external" href="http://supervisord.org">supervisor</a>, but can be controlled independently.</p>
+<p>Once the build is complete, you can start the services manually like this:</p>
+<p>Twisted:</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted
+$ bin/twistd -l - yuke</pre>
+</div>
+</div></blockquote>
+<p>Node:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>::</dt>
+<dd>$ cd ~/Node.js-Vs-Twisted/parts/nodejs
+$ source bin/activate
+$ yukeyukeyuke &amp;</dd>
+</dl>
+</div></blockquote>
+<p>Documentation:</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted/www
+$ python -m SimpleHTTPServer 9997 &amp;</pre>
+</div>
+</div></blockquote>
+<p><em>I will leave stopping them as an exercise for the user :)</em></p>
+<p>Or just start them with supervisor (preferred method):</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted
+$ bin/supervisord</pre>
+</div>
+</div></blockquote>
+<p>You can check the status of the processes with supervisorctl:</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted
+$ bin/supervisorctl status
+site:docs                        RUNNING    pid 2565, uptime 0:00:02
+site:node                        RUNNING    pid 2564, uptime 0:00:02
+site:twisted                     RUNNING    pid 2566, uptime 0:00:02</pre>
+</div>
+</div></blockquote>
+<p>To stop supervisord, get the PID file, and kill it:</p>
+<blockquote>
+<div><div class="highlight-python"><pre>$ cd ~/Node.js-Vs-Twisted
+$ kill `cat var/supervisord.pid`</pre>
+</div>
+</div></blockquote>
+<p>There is a template for an init.d script in the source. Once the app is fleshed out a bit more, I&#8217;ll implement adding it to your system startup/shutdown process.</p>
+<p>Once the services are running, you can view them at the following URLs:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>node.js:</dt>
+<dd><a class="reference external" href="http://127.0.0.1:8124/">http://127.0.0.1:8124/</a></dd>
+<dt>Twisted:</dt>
+<dd><a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></dd>
+<dt>Docs:</dt>
+<dd><a class="reference external" href="http://127.0.0.1:9997/">http://127.0.0.1:9997/</a></dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">YukeYukeYuke: SCRUM Tools</a><ul>
+<li><a class="reference internal" href="#readme">README</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#about-the-app">About the App</a></li>
+<li><a class="reference internal" href="#directions-for-use">Directions For Use</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#running-the-build">Running The Build</a></li>
+<li><a class="reference internal" href="#running-the-apps">Running the Apps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="next chapter">YukeYukeYuke: A Real-Time SCRUM Collaboration Tool</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool"
+             >next</a> |</li>
+    <li><a href="#">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, Josh Johnson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>

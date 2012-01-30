@@ -1,0 +1,239 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>YukeYukeYuke: Requirements &mdash; YukeYukeYuke 0.0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="#" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/toggle_sections.js"></script>
+    <link rel="top" title="YukeYukeYuke 0.0.1a documentation" href="index.html" />
+    <link rel="next" title="YukeYukeYuke: User Stories" href="userstories.html" />
+    <link rel="prev" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="userstories.html" title="YukeYukeYuke: User Stories"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool"
+             accesskey="P">previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="yukeyukeyuke-requirements">
+<h1>YukeYukeYuke: Requirements<a class="headerlink" href="#yukeyukeyuke-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-domain">
+<h2>Problem Domain<a class="headerlink" href="#problem-domain" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://www.scrum.org/">SCRUM</a> project management methodology prescribes a lot of mandatory meetings as part of the process. Those meetings often involve sorting through reams of User Stories and other intermediate products, and discussions that involve input from the entire team, often at the same time.</p>
+<p>Some specific problem areas:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Planning Poker</li>
+<li>Discussion/Estimation/Prioritizing of User Stories</li>
+<li>Sprint Retrospective Meeting</li>
+</ul>
+</div></blockquote>
+<div class="section" id="planning-poker">
+<h3>Planning Poker<a class="headerlink" href="#planning-poker" title="Permalink to this headline">¶</a></h3>
+<p>This process involves each member of the team deciding on an estimation value for a given User Story.</p>
+<p>This is typically expressed as a Fibonacci sequence printed on playing cards.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Wikipedia Article on Planning Poker
+     <a class="reference external" href="http://en.wikipedia.org/wiki/Planning_poker">http://en.wikipedia.org/wiki/Planning_poker</a></p>
+</div>
+<p>Some issues:</p>
+<blockquote>
+<div><ul class="simple">
+<li>it can be hard to keep developers from taking too much time</li>
+<li>doing it remotely can be difficult</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="user-story-processing">
+<h3>User Story Processing<a class="headerlink" href="#user-story-processing" title="Permalink to this headline">¶</a></h3>
+<p>In many meetings in the SCRUM process, the back-log of User Stories is worked through, often in many passes over time.</p>
+<p>This happens during planning, back-log grooming, estimation, prioritizing, and often happens ad-hoc as well.</p>
+<p>A good User Story is well written, and is looked at enough to clarify any ambiguities or uncertainties. Better User Stories produce better products.</p>
+<p>Aside from general organizational issues (people use databases, content management systems, online tools, issue trackers, spreadsheets, and even pen and paper), it can be difficult to systematically work through a set of User Stories.</p>
+<p>A user interface that would organize User Stories and allow for quick online processing would tremendously streamline the whole process.</p>
+</div>
+<div class="section" id="sprint-retrospective">
+<h3>Sprint Retrospective<a class="headerlink" href="#sprint-retrospective" title="Permalink to this headline">¶</a></h3>
+<p>At the end of each sprint, the team gets together for a retrospective meeting, where each member expresses their feelings about the work that was done.</p>
+<p>It&#8217;s typically expressed in these terms:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Good:</th><td class="field-body">What went &#8216;right&#8217; during the sprint.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bad:</th><td class="field-body">What went &#8216;wrong&#8217; during the sprint.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Try:</th><td class="field-body">What can we do to make things better next time?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Commit:</th><td class="field-body">List action items that the team will commit to during the next sprint.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Ideally, the team members come up with this information on the spot during the meeting, jotting responses to each column down while hiding their response from their teammates. They then reveal their responses at once, one column at a time.</p>
+<p>At my current job we&#8217;ve been using a shared Google docs spreadsheet, hiding our responses by setting the font color to white on a white background.</p>
+<p>I&#8217;d like to see this put into a simple user interface with timers and a little guidance from the tool as to how the process works.</p>
+</div>
+</div>
+<div class="section" id="technical-requirements">
+<h2>Technical Requirements<a class="headerlink" href="#technical-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="server-side">
+<h3>Server-Side<a class="headerlink" href="#server-side" title="Permalink to this headline">¶</a></h3>
+<p>We will require two server-side applications that utilize the same networking protocols. One written in Node.js, one in Twisted.</p>
+<p>The client/server api should be identical in both implementations. The internal design, however, can diverge a bit to accommodate best-practices of either framework.</p>
+<p>The application should run in any modern Linux. MacOS X support is desired but not required.</p>
+<p>Windows support would be a great bonus, but is not a primary target.</p>
+</div>
+<div class="section" id="client-side">
+<h3>Client-Side<a class="headerlink" href="#client-side" title="Permalink to this headline">¶</a></h3>
+<p>The client-side of the app should run in any &#8216;modern&#8217; browser.</p>
+<p>Javascript is encouraged (preference for jQuery framework if possible)</p>
+<p>HTML5 is on the table if required.</p>
+<dl class="docutils">
+<dt>Specific browser targets:</dt>
+<dd><ul class="first last simple">
+<li>Firefox 9.x</li>
+<li>Chrome 16.0.x</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>The application should be released under a GPL license.</p>
+</div>
+<div class="section" id="packaging">
+<h3>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h3>
+<p>The applications should be packaged and distributed as installable modules using the mechanisms that exist for each platform (python eggs and npm packages).</p>
+<p>Each should come with a zc.buildout sandbox environment for testing.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">YukeYukeYuke: Requirements</a><ul>
+<li><a class="reference internal" href="#problem-domain">Problem Domain</a><ul>
+<li><a class="reference internal" href="#planning-poker">Planning Poker</a></li>
+<li><a class="reference internal" href="#user-story-processing">User Story Processing</a></li>
+<li><a class="reference internal" href="#sprint-retrospective">Sprint Retrospective</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#technical-requirements">Technical Requirements</a><ul>
+<li><a class="reference internal" href="#server-side">Server-Side</a></li>
+<li><a class="reference internal" href="#client-side">Client-Side</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#packaging">Packaging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">YukeYukeYuke: A Real-Time SCRUM Collaboration Tool</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="userstories.html"
+                        title="next chapter">YukeYukeYuke: User Stories</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/requirements.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="userstories.html" title="YukeYukeYuke: User Stories"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="YukeYukeYuke: A Real-Time SCRUM Collaboration Tool"
+             >previous</a> |</li>
+    <li><a href="index.html">YukeYukeYuke Documentation</a> &raquo; </li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, Josh Johnson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>
