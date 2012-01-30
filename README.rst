@@ -3,25 +3,25 @@ Node.js vs. Twisted
 ===================
 
 Overview
-========
+********
 This repository contains a `zc.buildout <http://pypi.python.org/pypi/zc.buildout/1.5.2>`_ sandbox environment to support a series of blog posts pitting `Node.js <http://nodejs.org>`_ against `Twisted <http://twistedmatrix.com/trac/>`_.
 
 The goal is to get into event-driven application development by working through the same requirements. Two servers, one fully-decoupled UI.
 
-The blog posts are on-going, starting with http://wp.me/p8How-9n. I'll collect (and probably expand on) the posts at http://lionfacelemonface.wordpress.com/node-js-vs-twi…he-whole-story/ when the series is complete.
+The blog posts are on-going, starting with http://wp.me/p8How-9n. I'll collect (and probably expand on) the posts at http://lionfacelemonface.wordpress.com/node-js-vs-twi‚Ä¶he-whole-story/ when the series is complete.
 
 I'm also going to break out the node, python, and front-end parts into separate packages, and distribute them via the standard channels. 
 
 So think of this project as 'soup to nuts' evaluation of Twisted, Node.js, and event-driven web development. 
 
 About the App
-=============
+*************
 See the documentation for more information. It's essentially a tool to help make SCRUM collaborations easier. 
 
 The working title is "YukeYukeYuke". It's how my 3 year-old nephew called his dog Luke.
 
 Directions For Use
-==================
+******************
 .. note:: 
    This project is for intra-cranial use only. **Eye Irritant.** *If product gets into eyes, flush with water.*
    

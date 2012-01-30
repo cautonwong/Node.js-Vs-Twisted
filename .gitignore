@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
@@ -46,3 +47,6 @@ lib/
 include/
 man/
 www/
+downloads/
+# TODO: not sure why this is in the buildout dir - need to look at configs
+twistd.pid

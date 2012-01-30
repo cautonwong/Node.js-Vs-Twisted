@@ -40,10 +40,11 @@ redirect_stderr=true
 [program:docs-httpd]
 command = ${buildout:bin-directory}/httpd -f ${buildout:directory}/conf/httpd.conf -DFOREGROUND
 redirect_stderr=true
+autostart = false
 
 [program:docs]
-command = ${buildout:bin-directory}/bin/python -m SimpleHTTPServer ${ports:public}
-directory = ${buildout:bin-directory}/www/html
+command = ${buildout:bin-directory}/python -m SimpleHTTPServer ${ports:public}
+directory = ${buildout:directory}/www/html
 redirect_stderr=true
 
 [group:site]
