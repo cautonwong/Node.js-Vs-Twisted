@@ -65,9 +65,13 @@ We will require two server-side applications that utilize the same networking pr
 
 The client/server api should be identical in both implementations. The internal design, however, can diverge a bit to accommodate best-practices of either framework.
 
+The protocol will be httpd-based, using JSON for data interchange when necessary.
+
+Some sort of static back-end will likely be required. No specific requirements exist except that the storage API be abstracted such that the data back-end could be migrated with minimal refactoring.
+
 The application should run in any modern Linux. MacOS X support is desired but not required.
 
-Windows support would be a great bonus, but is not a primary target.
+Windows support would be a great bonus (I'm fairly certain both platforms will run on that platform), but is not a primary target.
 
 Client-Side
 -----------

@@ -43,9 +43,15 @@ redirect_stderr=true
 autostart = false
 
 [program:docs]
-command = ${buildout:bin-directory}/python -m SimpleHTTPServer ${ports:public}
+command = python -m SimpleHTTPServer ${ports:public}
 directory = ${buildout:directory}/www/html
 redirect_stderr=true
 
+[program:autodoc]
+# maintains the 'nosier' inotify watching tool, to build the docs whenever the files change.
+command = ${buildout:bin-directory}/nosier "make html"
+redirect_stderr = true
+directory = ${buildout:directory}/docs
+
 [group:site]
-programs=node,twisted,docs
+programs=node,twisted,docs,autodoc

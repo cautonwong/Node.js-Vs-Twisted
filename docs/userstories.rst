@@ -8,9 +8,23 @@ User Management
 ===============
 There needs to be a way to manage users who have access to the system. They need to be grouped into projects. Users will be given certain roles on each project, such as 'Team Member', 'Product Owner' and 'Scrum Master', which will drive their access level and how the user interfaces are presented.
 
+At minimum users should provide a user name, a password and an e-mail.
+
+Implementation Details
+----------------------
+0.0.1a
+~~~~~~
+In the first release, the application will be self-organizing, focusing on the meeting helper UIs. 
+
+A user interface will be provided for users to claim a role when creating or joining a meeting. Roles will be implemented as text strings with no additional meta-data.
+
+
+
+Profile Management
+==================
 Profile data should be flexible and extensible by someone setting up the system.
 
-At minimum users should provide a user name, a password and an e-mail.
+
 
 User Authentication
 ===================
